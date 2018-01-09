@@ -19,7 +19,7 @@
 			    @if($posts->count() > 0)
 					@foreach($posts as $post)
 						<tr>
-							<td><img src="{{ $post->featured }}" alt="{{ $post->title }}" width="90px" height="50px"></td>
+							<td><img src="{{ $post->featured }}" alt="{{ $post->title }}" width="200px" height="100px"></td>
 							<td>{{ $post->title }}</td>								
 							<td>
 								  <a href="{{ route('posts.restore', ['id' => $post->id]) }}" class="btn btn-xs btn-success">Restore</a>

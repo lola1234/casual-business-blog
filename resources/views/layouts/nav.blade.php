@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -12,15 +13,45 @@
 
 			<!-- Branding Image -->
 			<a class="navbar-brand" href="{{ url('/') }}">
-				{{ config('app.name', 'Laravel') }}
+				Casual
 			</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="app-navbar-collapse">
 			<!-- Left Side Of Navbar -->
-			<ul class="nav navbar-nav">
-				<li><a href="{{ route('posts.index') }}">Posts</a></li>
-				<li><a href="{{ route('setting') }}">Settings</a></li>
+			<ul class="nav navbar-nav">			
+				
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+						Settings <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">						
+						<li><a href="{{ route('homesetting') }}">Home</a></li>
+						<li><a href="{{ route('aboutsetting') }}">About</a></li>
+						<li><a href="{{ route('setting') }}">Contact</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+						Posts <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{{ route('posts.index') }}">Posts</a></li>
+						<li><a href="{{ route('posts.create') }}">Create</a></li>
+						<li><a href="{{ route('posts.bin') }}">Bin</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+						Categories <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{{ route('categories.index') }}">Categories</a></li>
+						<li><a href="{{ route('categories.create') }}">Create</a></li>
+					</ul>
+				</li>
 			</ul>
 
 			<!-- Right Side Of Navbar -->

@@ -10,14 +10,19 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    /**
+	
+	public function __construct(){
+		$this->middleware('admin');
+	}
+	
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('admin.posts.index', ['posts' =>Post::latest()]);
+        return view('admin.posts.index', ['posts' =>Post::latest()->get()]);
     }
 
     /**
@@ -57,7 +62,7 @@ class PostController extends Controller
 			'content' => $request->content,
 			'featured' => '/uploads/images/'.$featuredNewName,
 			'category_id' => $request->category_id,
-			'slug' => str_slug('title'),
+			'slug' => str_slug($request->title),
 			'user_id' => Auth::id()
 		]);
 		
@@ -118,9 +123,10 @@ class PostController extends Controller
 		$post->title = $request->title;
 		$post->content = $request->content;
 		$post->category_id = $request->category_id;
-		$post->slug = str_slug('title');
-		$post->user_id= Auth::id();
-				
+		$post->slug = str_slug($request->title);
+		
+		$post->save();
+						
 		Session::flash('success', 'Post Updated');
 		
 		return redirect()->route('posts.index');
@@ -139,7 +145,7 @@ class PostController extends Controller
 		$post->delete();
 		
 		Session::flash('success', 'Post Trashed');
-		redirect()->back();
+		return redirect()->route('posts.index');
     }
 	
 	public function bin(){
@@ -148,15 +154,15 @@ class PostController extends Controller
 	}
 	
 	public function restore($id){
-		$post = Post::withTrashed()->where(id, $id)->get();
-		$post->category()->restore();
+		$post = Post::withTrashed()->where('id', $id)->first();
+		$post->restore();
 		
 		return redirect()->route('posts.index');
 	}
 	
 	public function kill($id){
-		$post = Post::withTrashed()->where(id, $id)->get();
-		$post->category()->forceDelete();
+		$post = Post::withTrashed()->where('id', $id)->first();
+		$post->forceDelete();
 		
 		return redirect()->route('posts.index');
 	}

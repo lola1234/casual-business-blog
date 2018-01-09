@@ -13,7 +13,7 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner">
 		<div class="item active">
-			<img class="img-responsive img-full" src="{{ $homesetting->carousel1 }}" alt="">
+			<img class="img-responsive img-full" src="{{ asset($homesetting->carousel1) }}" alt="">
 		</div>
 		<div class="item">
 			<img class="img-responsive img-full" src="img/slide-2.jpg" alt="">

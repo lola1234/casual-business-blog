@@ -29,6 +29,7 @@
 				<input type="text" name="contact" value="{{ $settings->contact }}" class="form-control">		
 			</div>
 			
+			
 			<div class="text-center">
 				<button class="btn btn-success" type="submit" >Update Changes</button>
 			</div>

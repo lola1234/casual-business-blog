@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    
+    public function __construct(){
+		$this->middleware('admin');
+	}
 	
 	public function index(){
-    	return view('admin.settings', ['settings' => Setting::first()]);
+    	return view('admin.settings.contactsettings', ['settings' => Setting::first()]);
     }
 
     public function update(){

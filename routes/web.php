@@ -11,16 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontEndController@index');
+ 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
 Route::get('/settings', 'SettingController@index')->name('setting');
 Route::post('/settings', 'SettingController@update')->name('setting.update');
+
+Route::get('/settings/about', 'AboutSettingController@index')->name('aboutsetting');
+Route::post('/settings/about', 'AboutSettingController@update')->name('aboutsetting.update');
+
+Route::get('/settings/home', 'HomeSettingController@index')->name('homesetting');
+Route::post('/settings/home', 'HomeSettingController@update')->name('homesetting.update');
 
 Route::get('/posts/bin', 'PostController@bin')->name('posts.bin');
 Route::get('/posts/restore/{id}', 'PostController@restore')->name('posts.restore');

@@ -9,7 +9,13 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
+    
+	public function __construct(){
+		$this->middleware('admin');
+	}
+	
+	
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -99,9 +105,9 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 		
-        /**foreach($category->posts as $post){
+        foreach($category->posts as $post){
             $post->forceDelete();
-        }*/
+        }	
 		
         $category->delete();
         Session::flash('success', 'You succesfully deleted the category.');

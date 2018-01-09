@@ -9,7 +9,7 @@
 	<div class="panel-heading">Edit Post: {{ $post->title }}</div>
 		
 		<div class="panel-body">
-			<form action="{{ 'posts.update', ['post'=>$post->id] }}" method="POST" enctype="multipart/form-data">
+			<form action="{{ route('posts.update', ['id'=>$post->id] )}}" method="POST" enctype="multipart/form-data">
 						{{ csrf_field() }}
 						{{ method_field('PUT') }}
 						
@@ -25,7 +25,7 @@
 				
 				<div class="form-group">
 					<label for="content">Content</label>
-					<textarea name="content" id="content" value="{{ $post->content }}" class="form-control"></textarea>
+					<textarea name="content" id="content" class="form-control">{{ $post->content }}</textarea>
 				</div>
 				
 				<div class="form-group">
