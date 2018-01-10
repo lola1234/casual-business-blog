@@ -1,47 +1,39 @@
-@extends('master.app')
+@extends('frontend.master')
 
+@section('header')
+	<div class="brand">{{ $setting->site_name }}</div>
+	<div class="address-bar">The Plaza | {{ $setting->address }} | {{ $setting->email}} | {{ $setting->phone }}</div>
+@endsection
 
 @section('content')
-
 <div class="row">
 	<div class="box">
+	
 		<div class="col-lg-12">
 			<hr>
-			<h2 class="intro-text text-center">Contact <strong>form</strong></h2>
+			<h2 class="intro-text text-center">Contact <strong>{{ $setting->site_name }}</strong></h2>
 			<hr>
-			<p>This contact form is just the form elements, it is not a working form. You will have to make the form work by yourself, or take it out if you can't figure out how to make it work.</p>
-			<form action="{{ route('contact.store') }}" method="POST">
-				<div class="row">
-					<div class="form-group col-lg-4">
-						<label for="name">Name</label>
-						<input type="text" name="name" class="form-control">
-					</div>
-					
-					<div class="form-group col-lg-4">
-						<label for="email">Email Address</label>
-						<input type="email" name="email" class="form-control">
-					</div>
-					
-					<div class="form-group col-lg-4">
-						<label for="phone">Phone Number</label>
-						<input type="text" name="phone" class="form-control">
-					</div>
-					
-					<div class="clearfix"></div>
-					
-					<div class="form-group col-lg-12">
-						<label>Message</label>
-						<textarea name="message" id="message" class="form-control" rows="6"></textarea>
-					</div>
-					
-					<div class="form-group col-lg-12">
-						<button type="submit" class="btn btn-default">Submit</button>
-					</div>
-					
-				</div>
-			</form>
 		</div>
+
+		<div class="col-md-8">
+			<!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+			<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+		</div>
+		
+		<div class="col-md-4">
+			<p>Phone: <strong>{{ $setting->contact }}</strong></p>
+			<p>Email: <strong>{{ $setting->email }}</strong></p>
+			<p>Address: <strong>{{ $setting->site_name }}<br>{{ $setting->location}}<br></strong></p>
+		</div>
+		<div class="clearfix"></div>
+		
 	</div>
 </div>
+    
+	
+
+	
+	@include('frontend.contactform')
+
 
 @endsection

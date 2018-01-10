@@ -17,6 +17,7 @@ class CreateAboutSettingsTable extends Migration
             $table->increments('id');
 			$table->string('featured');
 			$table->text('content');
+			$table->text('vision');
             $table->timestamps();
         });
     }

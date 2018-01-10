@@ -10,7 +10,7 @@ class AboutSettingController extends Controller
 {
    
 	public function __construct(){
-		$this->middleware('admin');
+		$this->middleware('auth');
 	}
 	
    public function index(){
@@ -20,7 +20,8 @@ class AboutSettingController extends Controller
 	public function update(){
 		$this->validate(request(), [
 
-    		'content' => 'required'
+    		'content' => 'required',
+			'vision' => 'required'
     	]);
 
     	$about = AboutSetting::first();
@@ -32,7 +33,8 @@ class AboutSettingController extends Controller
 			$about->featured = '/uploads/images/'.$imageNewName;
 		}
     	$about->content = request()->content;
-    	
+    	$about->vision = request()->vision;
+		
     	$about->save();
 
     	Session::flash('success','settings updated');

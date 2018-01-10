@@ -23,7 +23,7 @@
 							<td><img src="{{ ($post->featured) }}" alt=" " width="200px" height="100px"></td>
 							<td> {{ $post->title }}</td>
 							<td>
-								<a href="{{ route('posts.edit', ['id' =>$post->id] )}}" class="btn btn-info">Edit</a>
+								<a href="{{ route('posts.edit', ['slug' =>$post->slug] )}}" class="btn btn-info">Edit</a>
 							</td>
 							<td> 
 		

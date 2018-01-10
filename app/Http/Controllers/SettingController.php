@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SettingController extends Controller
 {
     public function __construct(){
-		$this->middleware('admin');
+		$this->middleware('auth');
 	}
 	
 	public function index(){

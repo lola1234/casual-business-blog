@@ -18,23 +18,23 @@
 
 <body>
 
+
+
 @include('frontend.nav')
 
-	<div class="container">
-		<div class="row">
-			<div class="box">
-				@yield('content')	
-			</div>
-		</div>
+	<div class="container">				
+		@yield('content')		
 	</div>
 	
 
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 text-center">
-				<p>Copyright &copy; Company 2013</p>
-			</div>			
+			<div class="box">
+				<div class="col-lg-12 text-center">
+					<p>Copyright &copy; Company 2013</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </footer>

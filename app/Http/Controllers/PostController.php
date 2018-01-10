@@ -12,7 +12,7 @@ class PostController extends Controller
 {
 	
 	public function __construct(){
-		$this->middleware('admin');
+		$this->middleware('auth');
 	}
 	
    /**
@@ -89,9 +89,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-		return view('admin.posts.edit', ['post' => Post::find($id),
+		return view('admin.posts.edit', ['post' => Post::where('slug', $slug)->first(),
 										 'categories' =>Category::all() ]);
     }
 

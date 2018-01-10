@@ -12,7 +12,11 @@
 */
 
 Route::get('/', 'FrontEndController@index');
- 
+Route::get('/about', 'FrontEndController@about');
+Route::get('/contact', 'FrontEndController@contact');
+Route::get('/blog', 'FrontEndController@blog');
+Route::get('/blog/{slug}', 'FrontEndController@show')->name('post.show');
+
 
 Auth::routes();
 
@@ -39,3 +43,5 @@ Route::resources
 		'posts' => 'PostController',
 		'categories' => 'CategoryController'
 	]);
+
+Route::get('/posts/{slug}/edit', 'PostController@edit')->name('posts.edit');

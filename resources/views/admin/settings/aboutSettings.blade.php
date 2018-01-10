@@ -17,6 +17,11 @@
 				<textarea name="content" id="content" class="form-control">{{ $aboutsetting->content }}</textarea>	
 			</div>
 			
+			<div class="form-group">
+				<label for="vision">Vision content: </label>
+				<textarea name="vision" id="vision" class="form-control">{{ $aboutsetting->vsion }}</textarea>	
+			</div>
+			
 			<div class="text-center">
 				<button class="btn btn-success" type="submit" >Update Changes</button>
 			</div>

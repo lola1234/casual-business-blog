@@ -14,7 +14,8 @@ class AboutSettingsTableSeeder extends Seeder
     {
         AboutSetting::create([
 			'featured' =>'/uploads/image/slide1.jpg',
-			'content'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+			'content'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+			'vision' =>'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
 		]);
     }
 }

@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 class HomeSettingController extends Controller
 {	
 	
+	public function __construct(){
+		$this->middleware('auth');
+	}
 	
     public function index(){
 		return view('admin.settings.homeSettings', ['homesetting' =>HomeSetting::first() ]);

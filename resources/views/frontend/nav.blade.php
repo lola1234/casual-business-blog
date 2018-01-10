@@ -1,7 +1,7 @@
 
-<div class="brand">Business Casual</div>
-<div class="address-bar">The Plaza | 5483 Start Bootstrap Ave. | Beverly Hills, California 26892 | 555.519.2013</div>
 
+<div class="brand">{{ $setting->site_name }}</div>
+<div class="address-bar">The Plaza | {{ $setting->address }} | {{ $setting->email}} | {{ $setting->contact }}</div>
 
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
@@ -18,13 +18,13 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.html">Home</a>
+				<li><a href="/">Home</a>
 				</li>
-				<li><a href="about.html">About</a>
+				<li><a href="/about">About</a>
 				</li>
-				<li><a href="blog.html">Blog</a>
+				<li><a href="/blog">Blog</a>
 				</li>
-				<li><a href="contact.html">Contact</a>
+				<li><a href="/contact">Contact</a>
 				</li>
 			</ul>
 		</div>
