@@ -1,6 +1,8 @@
 # casual-business-blog
 Casual business blog using Laravel framework
 
-Casual business website with CMS blog features
-Back end admin settings panel and front end properties
+A Casual business website with CMS blog features.
+Backend admin settings panel and front end properties
+
+
 
