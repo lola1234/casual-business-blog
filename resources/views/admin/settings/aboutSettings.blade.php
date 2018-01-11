@@ -14,12 +14,12 @@
 			
 			<div class="form-group">
 				<label for="content">content: </label>
-				<textarea name="content" id="content" class="form-control">{{ $aboutsetting->content }}</textarea>	
+				<textarea name="content" id="summernote" cols="5" rows="5" class="form-control">{{ $aboutsetting->content }}</textarea>	
 			</div>
 			
 			<div class="form-group">
 				<label for="vision">Vision content: </label>
-				<textarea name="vision" id="vision" class="form-control">{{ $aboutsetting->vsion }}</textarea>	
+				<textarea name="vision" id="summernote" cols="5" rows="5" class="form-control">{{ $aboutsetting->vision }}</textarea>	
 			</div>
 			
 			<div class="text-center">

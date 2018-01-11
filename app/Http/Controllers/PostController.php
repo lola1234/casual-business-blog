@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use Paginate;
 use Session;
 use Auth;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index', ['posts' =>Post::latest()->get()]);
+        return view('admin.posts.index', ['posts' =>Post::paginate(5)]);
     }
 
     /**

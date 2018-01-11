@@ -5,8 +5,10 @@
 			<hr>
 			<h2 class="intro-text text-center">Contact <strong>form</strong></h2>
 			<hr>
-			<p>This contact form is just the form elements, it is not a working form. You will have to make the form work by yourself, or take it out if you can't figure out how to make it work.</p>
-			<form action="#" method="POST">
+			<p>This contact form uses laravel mail helper to automatically notify users</p>
+			
+			<form action="{{ route('contact.store')}}" method="POST">
+				{{ csrf_field() }}
 				<div class="row">
 					<div class="form-group col-lg-4">
 						<label for="name">Name</label>

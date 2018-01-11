@@ -60,5 +60,6 @@ class HomeSettingController extends Controller
 		Session::flash('success','settings updated');
 		
     	return redirect()->back();				
-	}		
+	}
+	
 }

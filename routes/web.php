@@ -22,8 +22,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-
+Route::get('/settings/contacts', 'ContactController@index')->name('contacts');
+Route::delete('/settings/contact/{id}', 'ContactController@destroy')->name('contact.destroy');
+Route::post('/settings/contact', 'ContactController@store')->name('contact.store');
 
 Route::get('/settings', 'SettingController@index')->name('setting');
 Route::post('/settings', 'SettingController@update')->name('setting.update');

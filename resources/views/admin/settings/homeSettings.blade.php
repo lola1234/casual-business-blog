@@ -29,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<label for="first_content">Content 1: </label>
-				<textarea name="first_content" id="first_content" rows="7" cols="7" class="form-control">{{ $homesetting->first_content }}</textarea>	
+				<textarea name="first_content" id="summernote" rows="7" cols="7" class="form-control">{{ $homesetting->first_content }}</textarea>	
 			</div>
 			
 			<div class="form-group">
@@ -38,7 +38,7 @@
 			</div>
 			<div class="form-group">
 				<label for="second_content">Content 2: </label>
-				<textarea name="second_content" id="second_content" rows="7" cols="7" class="form-control">{{ $homesetting->second_content }}</textarea>	
+				<textarea name="second_content" id="summernote" rows="7" cols="7" class="form-control">{{ $homesetting->second_content }}</textarea>	
 			</div>
 			
 			<div class="text-center">

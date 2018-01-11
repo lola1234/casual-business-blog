@@ -21,7 +21,7 @@
 					@foreach($posts as $post)
 						<tr>
 							<td><img src="{{ ($post->featured) }}" alt=" " width="200px" height="100px"></td>
-							<td> {{ $post->title }}</td>
+							<td><a href="{{ route('post.show', ['slug'=>$post->slug ]) }}">{{ $post->title }}</a></td>
 							<td>
 								<a href="{{ route('posts.edit', ['slug' =>$post->slug] )}}" class="btn btn-info">Edit</a>
 							</td>
@@ -44,5 +44,8 @@
 			</tbody>
 		</table>
 	</div>
+			<div class="text-center">{{ $posts->links() }}</div>
 </div>
+
+
 @endsection

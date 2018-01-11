@@ -12,11 +12,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 </head>
 <body>
     <div id="app">
-       
+   	
 	   @include('layouts.nav')
+
 		<div class = "container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
@@ -29,5 +32,26 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+  </script>
+  <script>
+		@if(Session::has('success'))
+			toastr.success("{{ Session::get('success')}}")
+		
+		@endif
+		
+		@if(Session::has('info'))
+			toastr.info("{{ Session::get('info')}}")
+		
+		@endif
+	
+	</script>
+	
+	
 </body>
 </html>
